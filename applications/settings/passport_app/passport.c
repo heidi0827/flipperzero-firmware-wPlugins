@@ -5,10 +5,10 @@ void passport_alloc(Passport* passport) {
 
     // Load Passport Settings
     if(!(passport_settings_load(&passport->settings))) {
-        passport->settings.background = BG_MARIO;
-        passport->settings.image = PIMG_GOKUSET;
+        passport->settings.background = BG_STOCK;
+        passport->settings.image = PIMG_DOLPHINMOODY;
         passport->settings.name = true;
-        passport->settings.mood_set = MOOD_SET_420;
+        passport->settings.mood_set = MOOD_SET_REGULAR;
         passport->settings.level = true;
         passport->settings.xp_text = true;
         passport->settings.xp_mode = XP_MODE_BAR_PERCENT;
