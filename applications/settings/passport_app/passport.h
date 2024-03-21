@@ -16,8 +16,8 @@
 #include "passport_settings/passport_settings.h"
 #include "passport_icons.h"
 
-#define MOODS_TOTAL 1
-#define BUTTHURT_MAX 14
+#define MOODS_TOTAL 3
+#define BUTTHURT_MAX 3
 
 typedef enum {
     AniRedVirus,
@@ -29,7 +29,7 @@ typedef enum {
     AniMaxNum
 } Animations;
 
-static IconAnimation* animations[AniMaxNum];
+//static IconAnimation* animations[AniMaxNum];
 
 typedef enum { EventGameTick, EventKeyPress } EventType;
 
@@ -68,42 +68,12 @@ static const Icon* const portrait_bad[3] = {
     &I_passport_bad2_46x49,
     &I_passport_bad3_46x49};
 
-static const Icon* const* portraitsMoody[3] = {portrait_happy, portrait_ok, portrait_bad};
+//static const Icon* const* portraitsMoody[3] = {portrait_happy, portrait_ok, portrait_bad};
 
-static const char* const moods[MOOD_SET_COUNT][16] = {
-    {},
-    {"Joyful",
-     "Good",
-     "Satisfied",
-     "Happy",
-     "Dreaming",
-     "Relaxed",
-     "Okay",
-     "Tired",
-     "Bored",
-     "Sad",
-     "Disappointed",
-     "Annoyed",
-     "Grumpy",
-     "Upset",
-     "Angry",
-     "Furious"},
-    {"Stoned",
-     "Baked",
-     "Ripped",
-     "Joyful",
-     "Happy",
-     "Satisfied",
-     "Relaxed",
-     "Nostalgic",
-     "Okay",
-     "Tired",
-     "Bored",
-     "Sad",
-     "Annoyed",
-     "Upset",
-     "Angry",
-     "Furious"}};
+static const char* const moods[MOOD_SET_COUNT] = {
+    "Happy",
+    "Okay",
+    "Angry"};
 
 typedef struct {
     FuriMutex* mutex;
@@ -134,6 +104,9 @@ typedef struct {
 
     char mood_str[20];
     uint8_t mood;
+    uint8_t iconnum;
+    uint8_t moodnum;
     uint8_t moodStrIndex;
     char dumbmode_mood[20];
+    char my_mood[9];
 } Passport;

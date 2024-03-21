@@ -114,7 +114,7 @@ void passport_set_variables(Passport* passport) {
     DESKTOP_SETTINGS_LOAD(passport->desktop_settings);
     DesktopSettings* desktop_settings = passport->desktop_settings;
 
-    passport->mood = 0; // DONT NEED DIFFERENT PICS BASED ON MOOD
+    passport->mood = 1; // DONT NEED DIFFERENT PICS BASED ON MOOD
     passport->moodStrIndex = stats->butthurt;
 
     // set mood to "Happy" if dumbmode is enabled

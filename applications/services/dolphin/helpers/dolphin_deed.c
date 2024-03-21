@@ -2,55 +2,55 @@
 #include <furi.h>
 
 static const DolphinDeedWeight dolphin_deed_weights[] = {
-    {5, DolphinAppSubGhz}, // DolphinDeedSubGhzReceiverInfo
-    {15, DolphinAppSubGhz}, // DolphinDeedSubGhzSave
-    {5, DolphinAppSubGhz}, // DolphinDeedSubGhzRawRec
-    {10, DolphinAppSubGhz}, // DolphinDeedSubGhzAddManually
-    {10, DolphinAppSubGhz}, // DolphinDeedSubGhzSend
-    {5, DolphinAppSubGhz}, // DolphinDeedSubGhzFrequencyAnalyzer
+    {25, DolphinAppSubGhz}, // DolphinDeedSubGhzReceiverInfo
+    {50, DolphinAppSubGhz}, // DolphinDeedSubGhzSave
+    {25, DolphinAppSubGhz}, // DolphinDeedSubGhzRawRec
+    {50, DolphinAppSubGhz}, // DolphinDeedSubGhzAddManually
+    {50, DolphinAppSubGhz}, // DolphinDeedSubGhzSend
+    {25, DolphinAppSubGhz}, // DolphinDeedSubGhzFrequencyAnalyzer
 
-    {5, DolphinAppRfid}, // DolphinDeedRfidRead
-    {15, DolphinAppRfid}, // DolphinDeedRfidReadSuccess
-    {15, DolphinAppRfid}, // DolphinDeedRfidSave
-    {10, DolphinAppRfid}, // DolphinDeedRfidEmulate
-    {10, DolphinAppRfid}, // DolphinDeedRfidAdd
+    {25, DolphinAppRfid}, // DolphinDeedRfidRead
+    {50, DolphinAppRfid}, // DolphinDeedRfidReadSuccess
+    {50, DolphinAppRfid}, // DolphinDeedRfidSave
+    {50, DolphinAppRfid}, // DolphinDeedRfidEmulate
+    {50, DolphinAppRfid}, // DolphinDeedRfidAdd
 
-    {5, DolphinAppNfc}, // DolphinDeedNfcRead
-    {15, DolphinAppNfc}, // DolphinDeedNfcReadSuccess
-    {5, DolphinAppNfc}, // DolphinDeedNfcSave
-    {5, DolphinAppNfc}, // DolphinDeedNfcDetectReader
-    {10, DolphinAppNfc}, // DolphinDeedNfcEmulate
-    {10, DolphinAppNfc}, // DolphinDeedNfcMfcAdd
-    {5, DolphinAppNfc}, // DolphinDeedNfcAddSave
-    {5, DolphinAppNfc}, // DolphinDeedNfcAddEmulate
+    {25, DolphinAppNfc}, // DolphinDeedNfcRead
+    {50, DolphinAppNfc}, // DolphinDeedNfcReadSuccess
+    {25, DolphinAppNfc}, // DolphinDeedNfcSave
+    {25, DolphinAppNfc}, // DolphinDeedNfcDetectReader
+    {50, DolphinAppNfc}, // DolphinDeedNfcEmulate
+    {50, DolphinAppNfc}, // DolphinDeedNfcMfcAdd
+    {25, DolphinAppNfc}, // DolphinDeedNfcAddSave
+    {25, DolphinAppNfc}, // DolphinDeedNfcAddEmulate
 
-    {5, DolphinAppIr}, // DolphinDeedIrSend
-    {15, DolphinAppIr}, // DolphinDeedIrLearnSuccess
-    {15, DolphinAppIr}, // DolphinDeedIrSave
+    {25, DolphinAppIr}, // DolphinDeedIrSend
+    {50, DolphinAppIr}, // DolphinDeedIrLearnSuccess
+    {50, DolphinAppIr}, // DolphinDeedIrSave
 
-    {5, DolphinAppIbutton}, // DolphinDeedIbuttonRead
-    {15, DolphinAppIbutton}, // DolphinDeedIbuttonReadSuccess
-    {15, DolphinAppIbutton}, // DolphinDeedIbuttonSave
-    {10, DolphinAppIbutton}, // DolphinDeedIbuttonEmulate
-    {10, DolphinAppIbutton}, // DolphinDeedIbuttonAdd
+    {25, DolphinAppIbutton}, // DolphinDeedIbuttonRead
+    {50, DolphinAppIbutton}, // DolphinDeedIbuttonReadSuccess
+    {50, DolphinAppIbutton}, // DolphinDeedIbuttonSave
+    {50, DolphinAppIbutton}, // DolphinDeedIbuttonEmulate
+    {50, DolphinAppIbutton}, // DolphinDeedIbuttonAdd
 
-    {15, DolphinAppBadusb}, // DolphinDeedBadUsbPlayScript
-    {15, DolphinAppPlugin}, // DolphinDeedU2fAuthorized
+    {50, DolphinAppBadusb}, // DolphinDeedBadUsbPlayScript
+    {50, DolphinAppPlugin}, // DolphinDeedU2fAuthorized
 
-    {5, DolphinAppPlugin}, // DolphinDeedGpioUartBridge
+    {25, DolphinAppPlugin}, // DolphinDeedGpioUartBridge
 
-    {5, DolphinAppPlugin}, // DolphinDeedPluginStart
-    {5, DolphinAppPlugin}, // DolphinDeedPluginGameStart
-    {20, DolphinAppPlugin}, // DolphinDeedPluginGameWin
+    {25, DolphinAppPlugin}, // DolphinDeedPluginStart
+    {25, DolphinAppPlugin}, // DolphinDeedPluginGameStart
+    {50, DolphinAppPlugin}, // DolphinDeedPluginGameWin
 };
 
 static uint8_t dolphin_deed_limits[] = {
-    100, // DolphinAppSubGhz
-    100, // DolphinAppRfid
-    100, // DolphinAppNfc
-    100, // DolphinAppIr
-    100, // DolphinAppIbutton
-    100, // DolphinAppBadusb
+    200, // DolphinAppSubGhz
+    200, // DolphinAppRfid
+    200, // DolphinAppNfc
+    200, // DolphinAppIr
+    200, // DolphinAppIbutton
+    200, // DolphinAppBadusb
     // 100, // DolphinAppU2f
     // 100, // DolphinAppGpio
     200, // DolphinAppPlugin
